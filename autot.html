@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ari Sipilä Oy</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+/* HEADER */
+header {
+    background: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    background: #c40000;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') center/cover;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 30px;
+}
+
+/* SECTION */
+.section {
+    padding: 30px 20px;
+}
+
+/* CARD GRID */
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #c40000;
+    color: #c40000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #c40000;
+    color: white;
+}
+
+/* AUTOT LISTA */
+.car {
+    background: white;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: #c40000;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ARI SIPILÄ OY</div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Luotettava autokauppa Salossa</h1>
+    <p>Autot • Moottoripyörät • Veneet</p>
+</div>
+
+<!-- PÄÄVALINNAT -->
+<div class="section">
+    <div class="grid">
+
+        <div class="card">
+            <h2>🚗 Autot</h2>
+            <p>Katso kaikki myynnissä olevat autot</p>
+            <a href="#autot" class="btn">Katso autot</a>
+        </div>
+
+        <div class="card">
+            <h2>🏍️ Moottoripyörät</h2>
+            <p>Kaikki moottoripyörät</p>
+            <a href="#mopot" class="btn">Katso</a>
+        </div>
+
+        <div class="card">
+            <h2>🚤 Veneet</h2>
+            <p>Veneet ja vesikalusto</p>
+            <a href="#veneet" class="btn">Katso</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- AUTOT -->
+<div class="section" id="autot">
+    <h2>🚗 Kaikki autot</h2>
+
+    <div class="car">
+        <h3>BMW 320d</h3>
+        <p>2018 • Diesel • 180 000 km</p>
+        <strong>18 900€</strong>
+    </div>
+
+    <div class="car">
+        <h3>Audi A4</h3>
+        <p>2017 • Bensiini • 150 000 km</p>
+        <strong>16 500€</strong>
+    </div>
+
+    <div class="car">
+        <h3>Volkswagen Golf</h3>
+        <p>2019 • Diesel • 120 000 km</p>
+        <strong>19 900€</strong>
+    </div>
+
+</div>
+
+<!-- MOOTTORIPYÖRÄT -->
+<div class="section" id="mopot">
+    <h2>🏍️ Moottoripyörät</h2>
+    <p>Lisätään myöhemmin 🔧</p>
+</div>
+
+<!-- VENEET -->
+<div class="section" id="veneet">
+    <h2>🚤 Veneet</h2>
+    <p>Lisätään myöhemmin 🔧</p>
+</div>
+
+<!-- RAHOITUS -->
+<div class="section">
+    <h2>💰 Rahoituslaskuri</h2>
+
+    <input type="number" id="price" placeholder="Auton hinta (€)">
+    <input type="number" id="months" placeholder="Kuukaudet">
+    <button onclick="calc()">Laske</button>
+
+    <p id="result"></p>
+</div>
+
+<!-- MEISTÄ -->
+<div class="section">
+    <h2>Meistä</h2>
+    <p>
+        Ari Sipilä Oy on luotettava autoliike Salossa.
+        Myymme laadukkaita autoja, moottoripyöriä ja veneitä.
+    </p>
+</div>
+
+<!-- YHTEYSTIEDOT -->
+<footer>
+    <h3>Yhteystiedot</h3>
+    <p>Myllyojankatu 26, Salo</p>
+    <p>0400 525 376</p>
+    <p>myynti@arisipila.fi</p>
+</footer>
+
+<script>
+function calc() {
+    let price = document.getElementById("price").value;
+    let months = document.getElementById("months").value;
+
+    let monthly = price / months;
+
+    document.getElementById("result").innerText =
+        "Kuukausierä: " + monthly.toFixed(2) + " €/kk";
+}
+</script>
+
+</body>
+</html>
